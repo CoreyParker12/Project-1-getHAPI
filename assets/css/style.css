@@ -1,0 +1,25 @@
+/*button.button.is-link {
+    background-color: #c3c3c3;
+}*/
+
+body {
+    height: 100vh;
+    background-color: #c8c8c8;
+
+}
+
+#ttt {
+    text-align: center;
+    padding-top: 50px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    padding: 20px;;
+}
+
+.button {
+    margin: 0 10px 0 10px;
+}
+
