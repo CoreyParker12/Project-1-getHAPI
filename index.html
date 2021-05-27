@@ -11,21 +11,34 @@
     <title>getH.API</title>
 </head>
 <body>
-    <div>
-        <div id="ttt">
-            <div>Would you like to getH.API?</div>
-            <div>Please pick</div>
+    <div id="homepage">
+        <div>
+            <div id="ttt">
+                <div>Would you like to getH.API?</div>
+                <div>Please pick</div>
+            </div>
+        </div>
+        
+        <div id="buttons">
+            <button class="button is-link">Surprise Me!</button>
+            <button class="button is-link">I'm Feeling...</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <button id="factBtn">Smart</button>
+                  <button id="dadBtn">Punny</button>
+                  <button id="quoteBtn">Inspired</button>
+                </div>
+              </div>
+              
         </div>
     </div>
-    <div id="buttons">
-        <button class="button is-link">Surprise Me!</button>
-        <button class="button is-link">I'm Feeling...</button>
+
+    <div id="renderedAPI">
+        <div>
+            <div class="generated-API" id="random-fact">
+            </div>
+        </div>
     </div>
-    <div>
-        <div class="generated-API" id="random-fact"></div>
-        <div class="generated-API" id="dad-joke"></div>
-        <div class="generated-API" id="quote"></div>
-    </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
