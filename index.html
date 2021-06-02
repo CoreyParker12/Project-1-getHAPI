@@ -7,40 +7,48 @@
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
-
     <title>getH.API</title>
 </head>
 <body>
-    <div id="homepage">
-        <div>
-            <div id="ttt">
-                <div>Would you like to getH.API?</div>
-                <div>Please pick</div>
+    <div id="body-container">
+        <section id="sidebar-container">
+            <div id="sidebar-title">
+                Recent Results
             </div>
-        </div>
-        
-        <div id="buttons">
-            <button class="button is-link" id="surpriseBtn">Surprise Me!</button>
-            <button class="button is-link" id="feelingBtn">I'm Feeling...</button>
-                <div id="myDropdown" class="dropdown-content">
-                  <button id="factBtn">Smart</button>
-                  <button id="dadBtn">Punny</button>
-                  <button id="quoteBtn">Inspired</button>
+            <div id="sidebar-searchbar">
+                <input type="text"></input>
+            </div>
+            <div id="sidebar-button">
+                <button>SEARCH</button>
+            </div>
+            <div id="recent-results"></div>
+        </section>
+        <div id="homepage">
+            <div>
+                <div id="user-select">
+                    <div>Would you like to getH.API?</div>
+                    <div>Please pick</div>
                 </div>
-              </div>
-              
-        </div>
-    </div>
-
-    <div id="renderedAPI">
-        <div>
-            <div class="generated-API" id="selected-API">
+            </div>
+            <div id="buttons">
+                <button class="button is-link" id="surpriseBtn">Surprise Me!</button>
+                <button class="button is-link" id="feelingBtn">I'm Feeling...</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <button id="factBtn">Smart</button>
+                      <button id="dadBtn">Punny</button>
+                      <button id="quoteBtn">Inspired</button>
+                    </div>
+                  </div>
             </div>
         </div>
+        <div id="renderedAPI">
+            <div>
+                <div class="generated-API" id="selected-API">
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="./assets/js/script.js"></script>
     </div>
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./assets/js/script.js"></script>
 </body>
 </html>
