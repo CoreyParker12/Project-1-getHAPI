@@ -32,7 +32,7 @@ function getRandomFact() {
     })
     .then(function (data) {
         $selectedAPI.text(data.text);
-        surpriseArray.push(data.text);
+        surpriseArray.unshift(data.text);
         storeSurprise();
     });
 
@@ -54,7 +54,7 @@ function getDadJoke() {
   })
   .then(function (data) {
     $selectedAPI.text(data.joke);
-    surpriseArray.push(data.joke);
+    surpriseArray.unshift(data.joke);
     storeSurprise();
   });
 
@@ -72,7 +72,7 @@ fetch('https://type.fit/api/quotes')
   .then(function (data) {
         let randomIndex = Math.floor(Math.random()*data.length)
         $selectedAPI.text('"' + data[randomIndex].text + '"' + "  -" + data[randomIndex].author);
-        surpriseArray.push('"' + data[randomIndex].text + '"' + "  -" + data[randomIndex].author);
+        surpriseArray.unshift('"' + data[randomIndex].text + '"' + "  -" + data[randomIndex].author);
         storeSurprise();
   });
 
@@ -133,12 +133,21 @@ function renderSurprises() {
       surpriseArray = storedSurprises;
       
       // For each stored surprise in local storage, render it to the page
-      // for (let i=0; i < storedSurprises.length; i++) {
-      //     // change the jQuery selector based on Corey's div name
-      //     let previousSurprise = $('<p>').text(surpriseArray[i]);
-      //     NAME_OF_DIV_TO_PUT_SURPRISES_IN.append(previousSurprise);
-      // }
+      for (let i=0; i < 5; i++) {
+          // change the jQuery selector based on Corey's div name
+          let previousSurprise = $('<button>').text(surpriseArray[i]);
+          $('#recent-results').append(previousSurprise);
+      }
   }
 }
 // Show any saved surprises upon page load
 renderSurprises();
+
+// Click event listener for return to homepage button
+$('#returnBtn').click(function() {
+  // $("#renderedAPI").hide();
+  // $("#homepage").show();
+  // $('#selected-API').empty();
+  // $("#myDropdown").hide();
+  location.reload();
+})

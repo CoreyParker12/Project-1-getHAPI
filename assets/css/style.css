@@ -36,14 +36,15 @@ body {
     width: 60%;
     height: 30px;
 }
-/* #recent-results {
+
+#recent-results {
     text-align: center;
     padding: 10px 0 10px 0;
 }
-#recent-results li {
-    width: 60%;
-    height: 30px;
-} */
+#recent-results button {
+    width: 90%;
+    /* height: auto; */
+}
 /* HOMEPAGE */
 #homepage {
     display: flex;
