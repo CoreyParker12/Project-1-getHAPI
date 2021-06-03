@@ -32,8 +32,6 @@ function getRandomFact() {
     })
     .then(function (data) {
         $selectedAPI.text(data.text);
-        surpriseArray.unshift(data.text);
-        storeSurprise();
     });
 
 }
@@ -54,8 +52,6 @@ function getDadJoke() {
   })
   .then(function (data) {
     $selectedAPI.text(data.joke);
-    surpriseArray.unshift(data.joke);
-    storeSurprise();
   });
 
 }
@@ -72,8 +68,6 @@ fetch('https://type.fit/api/quotes')
   .then(function (data) {
         let randomIndex = Math.floor(Math.random()*data.length)
         $selectedAPI.text('"' + data[randomIndex].text + '"' + "  -" + data[randomIndex].author);
-        surpriseArray.unshift('"' + data[randomIndex].text + '"' + "  -" + data[randomIndex].author);
-        storeSurprise();
   });
 
 }
@@ -122,7 +116,40 @@ $('#quoteBtn').click(function() {
 // Creating a function to store an array of generated 'surprises' to local storage
 function storeSurprise() {
   localStorage.setItem("surprise", JSON.stringify(surpriseArray));
+
+
+
+
 }
+
+$('#form-styling').submit(function(event) {
+  event.preventDefault();
+
+
+  let userRating = event.currentTarget[0].value;
+
+  if (userRating == 1 || userRating == 2 || userRating == 3 || userRating == 4 || userRating == 5) {
+    let latestAPI = $('#selected-API').text();
+
+    let userObject = {
+      API: latestAPI,
+      rating: userRating
+    }
+  
+    // let test = Object.values(userObject);
+    // console.log(test)
+
+   surpriseArray.unshift(userObject);
+   
+   storeSurprise();
+  } else {
+    alert('No!');
+  }
+
+
+
+});
+
 
 // Creating a function to render the saved 'surprises' to the page from local storage
 function renderSurprises() {
@@ -135,10 +162,17 @@ function renderSurprises() {
       // For each stored surprise in local storage, render it to the page
       for (let i=0; i < 5; i++) {
           // change the jQuery selector based on Corey's div name
-          let previousSurprise = $('<button>').text(surpriseArray[i]);
+          let previousSurprise = $('<button>').html(surpriseArray[i].API + '<br></br>' + surpriseArray[i].rating);
           $('#recent-results').append(previousSurprise);
+
+          if (!surpriseArray[i+1]) {
+            break;
+          }
       }
   }
+
+  
+
 }
 // Show any saved surprises upon page load
 renderSurprises();
