@@ -65,20 +65,20 @@
     <section class="section">
         <div class="container">
 
-            <div class="tile is-ancestor">
+            <div class="tile is-ancestor column-stack">
                 <div class="tile is-parent is-4">
-                  <article class="tile is-child box" >
+                  <article class="tile is-child box" id="favorites-title">
                     <p class="title">Your Favorites</p>
                     <div class="content" id="recent-results"></div>
                   </article>
                 </div>
-                <div class="tile is-parent centered">
+                <div class="tile is-parent center-content">
                   <article class="tile is-child box" id="homepage">
                     <p class="title">Would you like to getH.API?</p>
-                    <p class="subtitle">Please choose.</p>
+                    <p class="subtitle" id="subtitle-styling">Please choose.</p>
 
                     <!-- buttons grouped -->
-                    <div class="field is-grouped">
+                    <div class=" field is-grouped" id="button-center-content">
                         <p class="control">
                           <button class="button is-success" id="surpriseBtn">
                             Surprise Me!
@@ -100,7 +100,7 @@
                               <a href="#" class="dropdown-item" id="factBtn">
                                 Some Knowledge
                               <a class="dropdown-item" id="dadBtn">
-                                A Laugh
+                                Some Laughter
                               </a>
                               <a href="#" class="dropdown-item" id="quoteBtn">
                                 Some Inspiration
@@ -120,10 +120,10 @@
                   <article class="tile is-child box" id="renderedAPI">
                     <div class="content" >
                         <h1 id="selected-API"></h1>
-                    <p class="subtitle">Please rate below</p>
+                    <p class="subtitle">Please enter a rating of 1 - 5 where 1 = "Meh" and 5 = "I love it".</p>
                     </div>
                     <!-- buttons grouped -->
-                    <div class="field is-grouped">
+                    <div class="field" id="button-styling">
                         <p class="control">
                             <form id="form-styling">
                             <input type="text" id="user-rating"></input>
@@ -133,12 +133,11 @@
 
                     </div>
                     <article class="message" id="invalid-msg">
-                        <div class="message-header">
+                        <div class="message-header" id="invalid-msg-styling">
                           <p>Not a valid entry!</p>
-                          <button class="delete" aria-label="delete"></button>
                         </div>
                         <div class="message-body">
-                          Please enter a rating of 1 - 5 where 1 = "Meh" and 5 = "I love it".
+                            Please enter a rating from 1 - 5
                         </div>
             </article>
                     
