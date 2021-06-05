@@ -1,76 +1,100 @@
-/*button.button.is-link {
-    background-color: #c3c3c3;
-}*/
 body {
     height: 100vh;
     background-color: #c8c8c8;
 }
-#body-container {
-    display: flex;
-}
+
 /* Sidebar */
-#sidebar-container {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 20%;
-    padding: 25px 30px 0 25px;
-}
-#sidebar-title {
+
+#favorites-title {
     text-align: center;
-    font-size: 20px;
-    padding: 10px 0 10px 0;
-}
-#sidebar-searchbar {
-    text-align: center;
-    padding: 10px 0 10px 0;
-}
-#sidebar-search input {
-    width: 90%;
-    height: 30px;
-}
-#sidebar-button {
-    text-align: center;
-    padding: 10px 0 10px 0;
-}
-#sidebar-button button {
-    width: 60%;
-    height: 30px;
 }
 
 #recent-results {
     text-align: center;
     padding: 10px 0 10px 0;
 }
+
 #recent-results button {
     width: 90%;
-    /* height: auto; */
+    margin:  5px 0 5px 0;
+
 }
+
+#recent-results button:hover{
+    background-color: #48c774;
+    color: white;
+}
+
 /* HOMEPAGE */
+
 #homepage {
     display: flex;
     flex-direction: column;
     flex-basis: 60%;
 }
+
 #user-select {
     text-align: center;
     padding-top: 50px;
 }
+
 #buttons {
     display: flex;
     justify-content: center;
     padding: 20px;;
 }
+
 .button {
     margin: 0 10px 0 10px;
 }
+
 .generated-API {
     text-align: center;
 }
 
+.dropdown-content {
+    text-align: left;
+}
+
+#subtitle-styling {
+    margin-top: 0;
+}
+
 /* Generated API Page */
 
+#renderedAPI, #homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #form-styling {
+    display: flex;
+    align-items: center;
+}
+
+#button-styling {
     text-align: center;
+}
+
+.center-content {
+    text-align: center;
+}
+
+#button-center-content, #invalid-msg-styling {
+    justify-content: center;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+    
+    .column-stack {
+        display: flex;
+        flex-direction: column-reverse;
+    
+    }
 }
 
 

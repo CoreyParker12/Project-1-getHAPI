@@ -139,13 +139,14 @@ $('#form-styling').submit(function(event) {
    surpriseArray.unshift(userObject);
    
    storeSurprise();
+   location.reload();
   } else {
     $("#invalid-msg").show();
   }
 
   $('#user-rating').val("");
 
-  location.reload();
+
 });
 
 
@@ -208,6 +209,7 @@ function renderSurprises() {
         // ------------------------------------------------------
           let previousSurprise = $('<button>').html(surpriseArray[i].API + '<br></br>' + numOfStars);
           $('#recent-results').append(previousSurprise);
+          
 
           if (!surpriseArray[i+1]) {
             break;
