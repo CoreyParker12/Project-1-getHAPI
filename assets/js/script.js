@@ -5,8 +5,8 @@ let surpriseArray = [];
 
 //Somewhere, after click
 
-$("#myDropdown").hide();
 $("#renderedAPI").hide();
+$("#invalid-msg").hide();
 
 function getRandom() {
 
@@ -80,14 +80,10 @@ $('#surpriseBtn').click(function() {
 
 }); 
 
-// Click event listener for show/hide drop-down choices
-$('#feelingBtn').click(function() {
-  $("#myDropdown").show();
-  });
-
 
 // Click event listener for "Smart" button choice under "I'm Feeling"
 $('#factBtn').click(function() {
+  console.log("hello");
   $("#homepage").hide();
   $("#renderedAPI").show();
   getRandomFact();
@@ -144,7 +140,7 @@ $('#form-styling').submit(function(event) {
    
    storeSurprise();
   } else {
-    alert('No!');
+    $("#invalid-msg").show();
   }
 
   $('#user-rating').val("");
