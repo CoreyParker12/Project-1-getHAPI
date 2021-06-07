@@ -3,7 +3,7 @@ body {
     background-color: #c8c8c8;
 }
 
-/* Sidebar */
+/* Favorites Tile */
 
 #favorites-title {
     text-align: center;
@@ -25,7 +25,7 @@ body {
     color: white;
 }
 
-/* HOMEPAGE */
+/* Homepage Styling */
 
 #homepage {
     display: flex;
@@ -86,7 +86,7 @@ body {
     justify-content: center;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 
 @media screen and (max-width: 768px) {
     
