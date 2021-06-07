@@ -10,61 +10,8 @@
     <title>getH.API</title>
 </head>
 <body>
-    <!-- <div id="body-container">
-        <section id="sidebar-container">
-            <div id="sidebar-title">
-                Recent Results
-            </div>
-            <div id="sidebar-searchbar">
-                <input type="text"></input>
-            </div>
-            <div id="sidebar-button">
-                <button>SEARCH</button>
-            </div>
-            <div id="recent-results"></div>
-        </section>
-        <div id="homepage">
-            <div>
-                <div id="user-select">
-                    <div>Would you like to getH.API?</div>
-                    <div>Please pick</div>
-                </div>
-            </div>
-            <div id="buttons">
-                <button class="button is-link" id="surpriseBtn">Surprise Me!</button>
-                <button class="button is-link" id="feelingBtn">I need...</button>
-                    <div id="myDropdown" class="dropdown-content">
-                      <button id="factBtn">Some Knowledge</button>
-                      <button id="dadBtn">A Laugh</button>
-                      <button id="quoteBtn">Some Inspiration</button>
-                    </div>
-                  </div>
-            </div>
-        </div>
-        <div id="renderedAPI">
-            <div>
-                <div class="generated-API" id="selected-API">
-                </div>
-            </div>
-            <!-- <div id="returnBtn-styling">
-                <button type="button" id="returnBtn">Return to Homepage</button>
-            </div> -->
-
-            <!-- <form id="form-styling">
-                <input type="text" id="user-rating"></input>
-                <button type="submit" id="submitBtn">Submit</button>
-            </form>
-
-        </div> -->
-
-
-
-
-
-    <!-- Bulma classes -->
     <section class="section">
         <div class="container">
-
             <div class="tile is-ancestor column-stack">
                 <div class="tile is-parent is-4">
                   <article class="tile is-child box" id="favorites-title">
@@ -73,91 +20,73 @@
                   </article>
                 </div>
                 <div class="tile is-parent center-content">
-                  <article class="tile is-child box" id="homepage">
-                    <p class="title">Would you like to getH.API?</p>
-                    <p class="subtitle" id="subtitle-styling">Please choose.</p>
-
-                    <!-- buttons grouped -->
-                    <div class=" field is-grouped" id="button-center-content">
-                        <p class="control">
-                          <button class="button is-success" id="surpriseBtn">
-                            Surprise Me!
-                          </button>
-                        </p>
-
-
-                        <div class="dropdown is-hoverable">
-                          <div class="dropdown-trigger">
-                            <button class="button is-outlined select" aria-haspopup="true" aria-controls="dropdown-menu">
-                              <span>I Need...</span>
-                              <span class="icon is-small">
-                                <i class="fas fa-angle-down" aria-hidden="true"></i>
-                              </span>
-                            </button>
-                          </div>
-                          <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                            <div class="dropdown-content">
-                              <a href="#" class="dropdown-item" id="factBtn">
-                                Some Knowledge
-                              <a class="dropdown-item" id="dadBtn">
-                                Some Laughter
-                              </a>
-                              <a href="#" class="dropdown-item" id="quoteBtn">
-                                Some Inspiration
-                              </a>
-
-
+                    <!-- Homepage -->
+                    <article class="tile is-child box" id="homepage">
+                        <p class="title">Would you like to getH.API?</p>
+                        <p class="subtitle" id="subtitle-styling">Please choose.</p>
+                        <!-- Surprise Me Button -->
+                        <div class=" field is-grouped" id="button-center-content">
+                            <p class="control">
+                                <button class="button is-success" id="surpriseBtn">
+                                    Surprise Me!
+                                </button>
+                            </p>
+                            <!-- I Need Dropdown -->
+                            <div class="dropdown is-hoverable">
+                                <div class="dropdown-trigger">
+                                    <button class="button is-outlined select" aria-haspopup="true" aria-controls="dropdown-menu">
+                                        <span>I Need...</span>
+                                        <span class="icon is-small">
+                                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                                <!-- Dropdown selections for I Need -->
+                                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                    <div class="dropdown-content">
+                                        <a href="#" class="dropdown-item" id="factBtn">
+                                            Some Knowledge
+                                        </a>
+                                        <a class="dropdown-item" id="dadBtn">
+                                            Some Laughter
+                                        </a>
+                                        <a href="#" class="dropdown-item" id="quoteBtn">
+                                            Some Inspiration
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                         </div>
-
-
-                    </div>
-
-                    
                   </article>
-
+                  <!-- renderedAPI Page -->
+                  <!-- Loads after choice is selected from home page -->
                   <article class="tile is-child box" id="renderedAPI">
-                    <div class="content" >
-                        <h1 id="selected-API"></h1>
-                    <p class="subtitle">Please enter a rating of 1 - 5 where 1 = "Meh" and 5 = "I love it".</p>
-                    </div>
-                    <!-- buttons grouped -->
-                    <div class="field" id="button-styling">
-                        <p class="control">
-                            <form id="form-styling">
-                            <input type="text" id="user-rating"></input>
-                            <button class= "button" type="submit" id="submitBtn">Submit</button>
-                            </form>
-                        </p>
-
-                    </div>
-                    <article class="message" id="invalid-msg">
-                        <div class="message-header" id="invalid-msg-styling">
-                          <p>Not a valid entry!</p>
+                        <div class="content" >
+                            <h1 id="selected-API"></h1>
+                            <p class="subtitle">Please enter a rating of 1 - 5 where 1 = "Meh" and 5 = "I love it".</p>
                         </div>
-                        <div class="message-body">
-                            Please enter a rating from 1 - 5
+                        <div class="field" id="button-styling">
+                            <p class="control">
+                                <form id="form-styling">
+                                    <input type="text" id="user-rating"></input>
+                                    <button class= "button" type="submit" id="submitBtn">Submit</button>
+                                </form>
+                            </p>
                         </div>
-            </article>
-                    
+                        <article class="message" id="invalid-msg">
+                            <div class="message-header" id="invalid-msg-styling">
+                                <p>Not a valid entry!</p>
+                            </div>
+                            <div class="message-body">
+                                Please enter a rating from 1 - 5
+                            </div>
+                        </article>
                   </article>
-
-                  
                 </div>
-              </div>
-
-
-
+            </div>
         </div>
-        
     </section>
-        
-
-
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="./assets/js/script.js"></script>
-    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
