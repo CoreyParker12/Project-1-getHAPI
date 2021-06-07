@@ -95,6 +95,11 @@ body {
         flex-direction: column-reverse;
     
     }
+
+    #recent-results button {
+        text-overflow: ellipsis;
+        color: red;
+    }
 }
 
 
