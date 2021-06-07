@@ -97,8 +97,7 @@ body {
     }
 
     #recent-results button {
-        text-overflow: ellipsis;
-        color: red;
+        font-size: 18px;
     }
 }
 
