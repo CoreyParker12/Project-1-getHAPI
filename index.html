@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to reset css stylesheet -->
     <link rel="stylesheet" href="./assets/css/reset.css" />
+    <!-- Link to Bulma for CSS styling -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <!-- Link to stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>getH.API</title>
 </head>
 <body>
+    <!-- Bulma containers for page and styling -->
     <section class="section">
         <div class="container">
             <div class="tile is-ancestor column-stack">
+                <!-- Your Favorites tile-->
                 <div class="tile is-parent is-4">
                   <article class="tile is-child box" id="favorites-title">
                     <p class="title">Your Favorites</p>
                     <div class="content" id="recent-results"></div>
                   </article>
                 </div>
+                <!-- Homepage and Rendered API tile -->
                 <div class="tile is-parent center-content">
                     <!-- Homepage -->
+                    <!-- Loads on page load and after user rating submission -->
                     <article class="tile is-child box" id="homepage">
                         <p class="title">Would you like to getH.API?</p>
                         <p class="subtitle" id="subtitle-styling">Need a quick pick-me-up?</p>
@@ -62,10 +69,12 @@
                   <!-- renderedAPI Page -->
                   <!-- Loads after choice is selected from home page -->
                   <article class="tile is-child box" id="renderedAPI">
+                        <!-- Rendered API text -->
                         <div class="content" >
                             <h1 id="selected-API"></h1>
                             <p class="subtitle">Please enter a rating of 1 - 5 where 1 = "Meh" and 5 = "I love it".</p>
                         </div>
+                        <!-- User rating input form -->
                         <div class="field" id="button-styling">
                             <p class="control">
                                 <form id="form-styling">
@@ -74,6 +83,7 @@
                                 </form>
                             </p>
                         </div>
+                        <!-- Message to load for invalid user input -->
                         <article class="message" id="invalid-msg">
                             <div class="message-header" id="invalid-msg-styling">
                                 <p>Not a valid entry!</p>
@@ -87,6 +97,8 @@
             </div>
         </div>
     </section>
+
+    <!-- Links to JQuery library and JavaScript file -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>

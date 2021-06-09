@@ -1,7 +1,7 @@
 # Project-1-getHAPI
 This is the first group project for the Georgia Tech Full-Stack Flex Web Development bootcamp.
 
-Group Name: geth.API
+Group Name: getH.API
 
 Group Members:
 * Corey Parker
@@ -32,15 +32,15 @@ The following acceptance criteria were used in the development of this project a
 
 * Have a polished UI.
 
-* Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, qualit comments, etc).
+* Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc).
 
 * Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 ## User Story
 
 * WHEN a user needs a quick pick-me-up,
-* THEN the application provides a fun pick-me-up in the form of a random fact, dad joke, or inspiring quote for the user.
+* THEN the application provides a pick-me-up in the form of a random fact, dad joke, or inspiring quote for the user.
 * WHEN a user opens the application,
-* THEN they are presented with the option to either get a random pick-me-up OR select options for some knowledge (a random fact), some laughter (a dad joke), or some inspirtion ( an inspirational quote).
+* THEN they are presented with the option to either get a random pick-me-up OR select options for some knowledge (a random fact), some laughter (a dad joke), or some inspiration (an inspirational quote).
 * WHEN a user chooses the 'Surprise Me' option,
 * THEN they are presented with a randomly generated fact, dad joke, or inspirational quote.
 * WHEN a user chooses the 'I need...' option,
@@ -52,9 +52,9 @@ The following acceptance criteria were used in the development of this project a
 * WHEN a user chooses that they need 'some inspiration', 
 * THEN they are presented with a randomly generated inspirational quote.
 * WHEN a user is presented with their pick-me-up,
-* THEN they are presented with an input field to rate the pick-me-up.
+* THEN they are presented with an input field to rate the pick-me-up from 1 to 5.
 * WHEN a user submits their rating for their pick-me-up,
-* THEN their pick-me-up and rating is saved to local storage
+* THEN their pick-me-up and rating is saved to local storage.
 * WHEN a user loads the application or submits a rating for their pick-me-up,
 * THEN they are presented with a sorted list of their top 5 rated previous pick-me-ups with associated ratings in the 'Your Favorites' section of the UI.
 * WHEN a user has less than 5 previous pick-me-ups, 
@@ -77,7 +77,7 @@ During the development of our application, the following resources and techonolo
 ## Mock-Up
 The following shows the web application's appearance and functionality:
 
-![Demo video of the geth.API website](https://github.com/...)    
+![Demo video of the getH.API website](https://github.com/CoreyParker12/Project-1-getHAPI/tree/main/assets/images/getHAPI-demo.gif)    
 
 ## Deployed Application Link
 
