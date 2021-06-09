@@ -77,7 +77,7 @@ During the development of our application, the following resources and techonolo
 ## Mock-Up
 The following shows the web application's appearance and functionality:
 
-![Demo video of the getH.API website](https://github.com/CoreyParker12/Project-1-getHAPI/tree/main/assets/images/getHAPI-demo.gif)    
+![Demo video of the getH.API website](https://github.com/CoreyParker12/Project-1-getHAPI/blob/main/assets/images/getHAPI-demo.gif)    
 
 ## Deployed Application Link
 
