@@ -99,6 +99,7 @@ body {
     #recent-results button {
         font-size: 18px;
         padding: 2px 30px;
+        border-radius: 5px;
     }
 }
 

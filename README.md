@@ -7,7 +7,7 @@ Group Members:
 * Corey Parker
 * Damian Grace
 * Meredith Wall
-* Shelley McHardey
+* Shelley McHardy
 * Terrell Morris
 ## Description
 This project was completed after learning Git, HTML, CSS, JavaScript, Web APIs, Third Party APIs, and Server Side APIs. 
