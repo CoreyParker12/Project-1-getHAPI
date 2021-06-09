@@ -1,5 +1,5 @@
 body {
-    height: 100vh;
+    min-height: 100vh;
     background-color: #c8c8c8;
 }
 
@@ -98,6 +98,7 @@ body {
 
     #recent-results button {
         font-size: 18px;
+        padding: 2px 30px;
     }
 }
 
