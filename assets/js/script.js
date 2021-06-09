@@ -1,7 +1,7 @@
 // Empty array to push generated APIs into...
-let surpriseArray = [];
+let pickmeupArray = [];
 
-// Hides the rendered API page and the invalid message when the pahe loads
+// Hides the rendered API page and the invalid message when the page loads
 $("#renderedAPI").hide();
 $("#invalid-msg").hide();
 
@@ -11,7 +11,7 @@ $("#invalid-msg").hide();
 function getRandom() {
 
     let test = Math.floor(Math.random() * 3);
-    console.log(test);
+    
     if (test === 0) {
       getRandomFact();
     } else if (test === 1) {
@@ -66,8 +66,14 @@ fetch('https://type.fit/api/quotes')
     return response.json();
   })
   .then(function (data) {
+
         let randomIndex = Math.floor(Math.random()*data.length)
-        $selectedAPI.text('"' + data[randomIndex].text + '"' + "  -" + data[randomIndex].author);
+
+        if (data[randomIndex].author) {
+          $selectedAPI.text('"' + data[randomIndex].text + '"' + "  -" + data[randomIndex].author);
+        } else {
+          $selectedAPI.text('"' + data[randomIndex].text + '"' + "  -unknown");  
+        }
   });
 
 }
@@ -81,17 +87,16 @@ $('#surpriseBtn').click(function() {
 
 }); 
 
-// Click event listener for "Smart" button choice under "I'm Feeling"
+// Click event listener for "some knowledge" choice under "I need..."
 $('#factBtn').click(function() {
   
-  console.log("hello");
   $("#homepage").hide();
   $("#renderedAPI").show();
   getRandomFact();
 
 });
 
-// Click event listener for "Punny" button choice under "I'm Feeling"
+// Click event listener for "some laughter" choice under "I need..."
 $('#dadBtn').click(function() {
   
   $("#homepage").hide();
@@ -100,7 +105,7 @@ $('#dadBtn').click(function() {
 
 });
 
-// Click event listener for "Inspired" button choice under "I'm Feeling"
+// Click event listener for "some inspiration" choice under "I need..."
 $('#quoteBtn').click(function() {
   
   $("#homepage").hide();
@@ -109,13 +114,14 @@ $('#quoteBtn').click(function() {
 
 });
 
-// Creating a function to store an array of generated 'surprises' to local storage
-function storeSurprise() {
+// Creating a function to store an array of generated 'pick-me-ups' to local storage
+function storePickMeUp() {
 
-  localStorage.setItem("surprise", JSON.stringify(surpriseArray));
+  localStorage.setItem("pick-me-up", JSON.stringify(pickmeupArray));
 
 }
 
+// Submit event listener for user rating input form
 $('#form-styling').submit(function(event) {
   
   event.preventDefault();
@@ -130,9 +136,9 @@ $('#form-styling').submit(function(event) {
       rating: userRating
     }
 
-    surpriseArray.unshift(userObject);
+    pickmeupArray.unshift(userObject);
    
-    storeSurprise();
+    storePickMeUp();
     location.reload();
   } else {
     $("#invalid-msg").show();
@@ -142,18 +148,18 @@ $('#form-styling').submit(function(event) {
 
 });
 
-// Creating a function to render the saved 'surprises' to the page from local storage
-function renderSurprises() {
+// Creating a function to render the saved 'pick-me-ups' to the page from local storage
+function renderPickMeUps() {
   
-  let storedSurprises = JSON.parse(localStorage.getItem("surprise"));
+  let storedPickMeUps = JSON.parse(localStorage.getItem("pick-me-up"));
 
-  // If there are surprises saved to local storage, set the array of surprises to those
-  if(storedSurprises) {
+  // If there are pick-me-ups saved to local storage, set the array of pick-me-ups to those
+  if(storedPickMeUps) {
       
-    surpriseArray = storedSurprises;
+    pickmeupArray = storedPickMeUps;
 
-    // SORTING ARRAY FUNCTION
-    // https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
+    // Function to sort the array in descending order by user rating
+    // Researched and consulted code from: https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
     function compare(a, b) {
       
       let ratingA = a.rating;
@@ -168,34 +174,33 @@ function renderSurprises() {
       return comparison
     }
     
-    surpriseArray.sort(compare);
-    console.log(surpriseArray);
-    
-    // For each stored surprise in local storage, render it to the page
+    pickmeupArray.sort(compare);
+        
+    // For each stored pick-me-up in local storage, render it to the page
     let numOfStars = "";
 
     for (let i=0; i < 5; i++) {
-      if (surpriseArray[i].rating === 1) {
+      if (pickmeupArray[i].rating === 1) {
         numOfStars = "☆";
-      } else if (surpriseArray[i].rating === 2) {
+      } else if (pickmeupArray[i].rating === 2) {
         numOfStars = "☆☆";
-      } else if (surpriseArray[i].rating === 3) {
+      } else if (pickmeupArray[i].rating === 3) {
         numOfStars = "☆☆☆";
-      }  else if (surpriseArray[i].rating === 4) {
+      }  else if (pickmeupArray[i].rating === 4) {
         numOfStars = "☆☆☆☆";
       }  else {numOfStars = "☆☆☆☆☆";
       
       }
 
-      let previousSurprise = $('<button>').html(surpriseArray[i].API + '<br></br>' + numOfStars);
-      $('#recent-results').append(previousSurprise);
+      let previousPickMeUp = $('<button>').html(pickmeupArray[i].API + '<br></br>' + numOfStars);
+      $('#recent-results').append(previousPickMeUp);
       
-      if (!surpriseArray[i+1]) {
+      if (!pickmeupArray[i+1]) {
         break;
       }
     }
   }
 }
 
-// Show any saved surprises upon page load
-renderSurprises();
+// Show any saved pick-me-ups upon page load
+renderPickMeUps();
